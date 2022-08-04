@@ -1,0 +1,1 @@
+g++ *.cpp -lSDL2 -lSDL2main -std=c++20 && ./a.out
