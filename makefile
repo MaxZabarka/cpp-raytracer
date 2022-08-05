@@ -1,8 +1,17 @@
+CC = g++
 SRC = $(wildcard src/*.cpp)
 OBJ = $(SRC:.cpp=.o)
+CFLAGS= -lSDL2 -lSDL2main -std=c++20
 
-prog: $(OBJ)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o prog $(patsubst src/,obj/,$(OBJ))
+raytracer: $(OBJ)
+	$(CC)  $(LDFLAGS) $(LIBS) -o raytracer $(patsubst src/,obj,$(OBJ)) $(CFLAGS)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $(COMPILE)/$(@F)  
+	$(CC) $(CFLAGS) -c $< -o ./src/$(@F)  
+
+run: raytracer
+	./raytracer
+
+clean :
+	rm src/*.o
+	rm raytracer

@@ -9,12 +9,13 @@ private:
     SDL_Renderer *renderer;
     int image_width;
     int image_height;
+    void event_loop();
+    std::tuple<int, int> quadrant_to_real(int x, int y);
 
 public:
     Window(int image_width = 256, int image_height = 256, int window_width = 512, int window_height = 512);
     ~Window();
     void draw_test();
-    void event_loop();
     void show();
     void put_pixel(int x, int y, Color color);
 };
