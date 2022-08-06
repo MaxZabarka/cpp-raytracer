@@ -52,7 +52,6 @@ void Window::show()
 
 std::tuple<int, int> Window::quadrant_to_real(int x, int y)
 {
-
     x = round(image_width / 2) + x;
     y = round(image_height / 2) - y;
     return std::make_tuple(x, y);

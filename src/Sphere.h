@@ -2,20 +2,18 @@
 #include "Ray.h"
 #include "Hit.h"
 #include "Hittable.h"
+#include "Vec3.h"
 
-// class Hittable
-// {
-//     virtual int test() = 0;
-// };
-
-class Sphere : Hittable
+class Sphere : public Hittable
 {
 private:
+    Material material;
+
 public:
-    Sphere();
+    Sphere(Point position = Point{}, double radius = 0.75, Material material = Material{Color{128, 128, 128}});
     ~Sphere();
-    Hit hit(const Ray &ray, double t_min, double t_max) override;
-    // int test() override;
-    // Hit hit(const Ray &ray, double t_min, double t_max) ;
-    // Hit hit(const Ray &ray, double t_min, double t_max);
+    Hit hit(const Ray &ray, double t_min, double t_max);
+    Material get_material();
+    Point position;
+    double radius;
 };

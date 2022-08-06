@@ -3,6 +3,6 @@
 
 struct Ray
 {
-    Direction direction;
-    Point origin;
+    Direction &direction;
+    Point &origin;
 };

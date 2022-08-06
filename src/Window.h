@@ -7,8 +7,7 @@ class Window
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
-    int image_width;
-    int image_height;
+
     void event_loop();
     std::tuple<int, int> quadrant_to_real(int x, int y);
 
@@ -18,4 +17,6 @@ public:
     void draw_test();
     void show();
     void put_pixel(int x, int y, Color color);
+    int image_width;
+    int image_height;
 };

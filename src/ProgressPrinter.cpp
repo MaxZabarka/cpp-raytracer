@@ -22,11 +22,11 @@ void ProgressPrinter::print_progress(float percentage)
     std::cerr << "  " << difftime(time(0), start_time) << " sec  ";
     int completed_bars = (int)(percentage * bar_length);
 
-    for (auto i = completed_bars; i--; i <= 0)
+    for (auto i = completed_bars; i > 0; i--)
     {
         std::cerr << "#";
     }
-    for (auto i = bar_length - completed_bars; i--; i <= 0)
+    for (auto i = bar_length - completed_bars; i > 0; i--)
     {
         std::cerr << ".";
     }
